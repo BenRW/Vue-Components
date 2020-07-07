@@ -1,7 +1,7 @@
 <template>
     <div id="quiver-plot-vue">
-        <svg height=300 width=600>
-            <image v-for="item in items" :key="item.xcoord" :x="item.xcoord" :y="item.ycoord" :style="item.style" xlink:href="./assets/basic_arrow.svg" />
+        <svg height=450 width=450>
+            <image v-for="item in items" :key="item.xcoord" :x="item.xcoord" :y="item.ycoord" :style="arrowStyle" xlink:href="./assets/basic_arrow.svg" />
         </svg>
     </div>
 </template>
@@ -25,6 +25,13 @@ export default {
             ],
         }
     },
+    computed: {
+        arrowStyle () {
+            return {
+                transform: Scale(0.2);
+            }
+        }
+    }
 }
 </script>
 
